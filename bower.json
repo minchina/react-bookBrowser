@@ -14,5 +14,12 @@
     "bower_components",
     "test",
     "tests"
-  ]
+  ],
+  "dependencies": {
+    "react": "~0.14.6",
+    "babel": "*",
+    "jquery": "~2.2.0",
+    "marked": "~0.3.5",
+    "bootstrap": "~3.3.6"
+  }
 }
