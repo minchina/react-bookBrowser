@@ -18,11 +18,11 @@ let App = React.createClass({
 });
 
 let routes = (
-    <Route name="app" path="/" handler={App}>
+    <Route name="app" path="/" handler={HelloHandler}>
         <Route name="hello" path="/hello" handler={HelloHandler}/>
     </Route>
 );
 
 Router.run(routes, function (Handler) {
-    React.render(<Handler />, document.body);
+    React.render(<HelloHandler />, document.body);
 });
