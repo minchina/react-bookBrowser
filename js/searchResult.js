@@ -1,16 +1,17 @@
 import React from 'react';
 import { Router, Route, Link } from 'react-router'
 
-let SearchResult = React.createClass({
+class SearchResult extends React.Component{
 
-    getInitialState() {
-        return {"searchPhrase": ""}
-    },
+    constructor(props) {
+        super(props);
+        this.state = {"searchPhrase":props.params.searchPhrase}
+    }
 
-    componentDidMount(){
+    componentDidMount() {
+        console.log(456)
 
-        this.setState({"searchPhrase":this.props.params.searchPhrase})
-    },
+    }
 
     render() {
         return (
@@ -20,6 +21,7 @@ let SearchResult = React.createClass({
         )
 
     }
-});
+
+}
 
 export default SearchResult;
