@@ -1,28 +1,17 @@
-import React from 'react';
-import Router from 'react-router';
-import { DefaultRoute, Link, Route, RouteHandler } from 'react-router';
+import React from 'react'
+import { render } from 'react-dom'
+import { Router, Route, Link, browserHistory } from 'react-router'
 
-import HelloHandler from './hello.js';
-
-let App = React.createClass({
-    render() {
-        return (
-            <div className="nav">
-                <Link to="app" className="homelink">Home  </Link>
-                <Link to="hello" className="hellolink">  Say Hello</Link>
-                {/* this is the importTant part */}
-                <RouteHandler/>
-            </div>
-        );
-    }
-});
+import Search from './search.js';
+import SearchResult from './searchResult.js'
 
 let routes = (
-    <Route name="app" path="/" handler={HelloHandler}>
-        <Route name="hello" path="/hello" handler={HelloHandler}/>
-    </Route>
+    (
+        <Router history={browserHistory}>
+            <Route path="/" name="main" component={Search} />
+            <Route name="searchResult" path="searchResult/:searchPhrase" component={SearchResult}/>
+        </Router>
+    )
 );
 
-Router.run(routes, function (Handler) {
-    React.render(<HelloHandler />, document.body);
-});
+render(routes, document.getElementById('react'));
