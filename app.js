@@ -2,8 +2,8 @@ import React from 'react'
 import { render } from 'react-dom'
 import { Router, Route, Link, browserHistory } from 'react-router'
 
-import Search from './search.js';
-import SearchResult from './searchResult.js'
+import Search from './js/search.js';
+import SearchResult from './js/searchResult.js'
 
 let routes = (
     (
