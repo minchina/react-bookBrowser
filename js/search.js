@@ -21,7 +21,6 @@ let Search = React.createClass({
                 </form>
             </div>
         )
-
     }
 });
 
